@@ -1,17 +1,37 @@
-## The Following are required by ClusterTool and CANNOT be removed
-# Ensure VIP is different from all master IPs
-VIP: 10.0.0.90
-# Defines the MasterNode IP
-MASTER1IP: 10.0.0.62
-# Defines the gateway for all nodes
-GATEWAY: 10.0.0.1
-# Defines the ip range metallb is allowed to use
-METALLB_RANGE: 10.0.0.91-10.0.0.99
-# Sets the Kubernetes Dashboard IP. Has to be within METALLB_RANGE and not in use
-DASHBOARD_IP: 10.0.0.91
-# Used to automatically generate a sshkey-pair for FluxCD
-# Has to start with ssh://
-GITHUB_REPOSITORY: "ssh://git@github.com:gismo2004/TestCluster.git"
-# DO NOT ALTER
-PODNET: 172.16.0.0/16
-SVCNET: 172.17.0.0/16
+#ENC[AES256_GCM,data:I/nn+lTfiKT6Zh4y2FaNU+xW1OdAejLNeAkdS3xIrzHwolcG8f6VcYc+mv902isZ4teua/PhLqnrxvvGVpkKzSQ=,iv:9IX6gnOBnN6RXkkq+C7xQ/aBwA+SQDJVRu3vIgUep30=,tag:6OfQIvQzKQsZYF6u2dS8AQ==,type:comment]
+#ENC[AES256_GCM,data:zLSif8Oo1RWKOXy7imWn8i6cl9l8ChRBy4JGNoaiFTFh8IaWJgf57onI+rg=,iv:thj7y6CGW/5gmjUZwwIzY0PpacQRSzdGcrLjg82e1EY=,tag:Agn729Wq4zir5nkOQhztUg==,type:comment]
+VIP: ENC[AES256_GCM,data:1nPB3JX5ot0P,iv:PUlU/VyrBb2y7dcFDAtsbJlQJUlbUxmvhRKMrNbj1KU=,tag:QRsOEi3kz47rMv8bpO2JbA==,type:str]
+#ENC[AES256_GCM,data:HppOLIk2G8BKMFeWrmD8ycz6RdQ+ic09eQQ=,iv:a+FucDTTFKg81+RX+mjaBzr8cn5ikKqygosdLUzh4xo=,tag:/oDiXcEENJfUZBRBwgmdyQ==,type:comment]
+MASTER1IP: ENC[AES256_GCM,data:UngE5Uk0gP+l,iv:kT//b+dK6jlrmLeEmIh28bRN6/AzyneLQmR0O8Ar0RU=,tag:AUZLr40l9bOQJ+mod15+1w==,type:str]
+#ENC[AES256_GCM,data:Eu/JoWFUlSdi+SQpRFW44fOCh9qlhSJKhriSPXZQteiVZQ==,iv:+qAtHsqMNwQ53kk8Xpeo8swtkUgstBCDoJxXrEU1gm4=,tag:yEUk3EeBzj84Ul0W+wf//A==,type:comment]
+GATEWAY: ENC[AES256_GCM,data:A32xmIiLnuQ=,iv:uApQ8m+OJYpBFONZE6MSJt2fR4m6BtJbTEKpIa94vVU=,tag:TaNcODE4LO/hxadiu1aV5Q==,type:str]
+#ENC[AES256_GCM,data:luW0/ITHn8ZVBEQ5mfairPJsZ4DcwyKIAs4AtmPjBe+xX7l9NXFzT0lSHH2tJ44=,iv:/0iNUcSgph2aW6j3aP2Mgw6F4RJRAmZot+iKRVAJ610=,tag:RnmQDX6drIW2300Bgd2kaA==,type:comment]
+METALLB_RANGE: ENC[AES256_GCM,data:QamDIUgMBR/Z84Kwvc2dkAQeJQ==,iv:A1q3zJqABG7TInlKoHphSKLH97gj5DxLd+D214xjgqM=,tag:/xjI5WDOhZPg6RLEbUFe4g==,type:str]
+#ENC[AES256_GCM,data:Xdu5XsNLr3MoNMymxTn/0L+nDvRaCR/x0RunDrrhTMftdPTgZ56ZwBUw9hs6tCl135uI3e5/cvVfDFCk919htUgap4naFtpUklks9XojKL0=,iv:Ll1XFpbC1ZHa45/dV2zmqf6CO1lNHFXG8F01gpTNf/c=,tag:MtwEPHZaggrWcgXOYfljNg==,type:comment]
+DASHBOARD_IP: ENC[AES256_GCM,data:hoayy1FqJkxi,iv:ob++5l5UUFZShDlueXIdPKGNDZabv70R5+LWk3fkXQY=,tag:jSwCQl/F4wi8D0lpJzpSdQ==,type:str]
+#ENC[AES256_GCM,data:S8ADL3tv3oI1VrWXm/vOw0JJSUhAYPS3EZrx/TJM/GUOhUClhmpvZPxFrcn08jJaJu6mEuoF8Tk=,iv:3OkPkD2HjfdMm4+JLpeq4A6U6t/pzAb11s9Eyn0muKQ=,tag:Zh+CIsf5SBvuBjdEbIkUCg==,type:comment]
+#ENC[AES256_GCM,data:K02j3TnH/nE6qlBnwUYWQotNMhPR5VO2IA==,iv:y0Tz5S3WWXDcJjmhstanrvKZ2DZOgrzUQKsgFG7ASOI=,tag:45RmZAvoAozOTTl6C7w/8w==,type:comment]
+GITHUB_REPOSITORY: ENC[AES256_GCM,data:jq5rKlS1uKO/73dt1iMpFFfuEAVsvEHv6/s/ftr5Ej1ly50ssq86M6OXA97VDg==,iv:ovFvgY9I4cDPKd5HDXEzhevKj23zIZJinZiL/eoDh8M=,tag:1OoB8BgRqBPd7fH+908qrA==,type:str]
+#ENC[AES256_GCM,data:VIMStL685mXaoxpfSw==,iv:6AfoJNqsWSelFUqwuIivxCVNJiNXzZY+XvaCmGUa/cM=,tag:juOhPoGHtIjYPCzZU0virw==,type:comment]
+PODNET: ENC[AES256_GCM,data:y/j2RuN9lqtQlQDM2w==,iv:SNYQb7vVaOUSzU5mhK+xvyWHhCDHJwBKINulEbAJKpo=,tag:oqcv5jeKqSvy0DNwmsHCxg==,type:str]
+SVCNET: ENC[AES256_GCM,data:2URTG8DpqcrRevbIRw==,iv:z/hKzRaNIdy+f2yJEVjSdaD7vhcppjz7ZCkLjS5He4s=,tag:Vhg/BuVBb8Q6EaK0jkuekQ==,type:str]
+sops:
+    shamir_threshold: 3
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age12e0jcfftn07z8hfc6hk76zjypw4fh6ndsntwcf0h4dxhwduhkgdsuaq6k7
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBJNTVvU1pXWGhjclloS0Uv
+            c0p1b0N5SUhvS2ZiK0hqSldkMWtHRWJJVFI4CnFaTDR4MmVuczFqeHlBbDFwMGMz
+            NVVqSFR6SzE1Q0EvZlZpRjI2MXY5dUUKLS0tIEdkc2FjVFc5ckdGSXd5aUh0VUht
+            TzRIU2FBUXBSeTN2QmxCY3BMbk9hWjAKJ7IUFGrdPnsA82g3AhsHNCccP0INCDWM
+            MYI0PkY6v15VXz6GcU3azPWLz6t2yLOrghaAm/lobuFf9aLLuTHeDg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-10-12T08:01:50Z"
+    mac: ENC[AES256_GCM,data:eZ6anCBwOocmc8lV363Bg/UZcWUPFrz8na6Hm1OzSgK8lUCpZQFdWpv/TzgzyLsc9a3VPTcCNT7mBNawCh5m8FylfBIFuQX3i7rdPBEfA6VCWfb2kvniZBX+fuVcPDpTDhGrE/Z0gTriG/dSIEdHFYrkUPOe0xn0jMK72Zh2lqE=,iv:ChwzDAg3IwTyoR4J30mbYUuvRdpozcofbYZPSTOtoZg=,tag:kZtJ759dJMI3D4V0ts9ZyA==,type:str]
+    pgp: []
+    version: 3.9.1
