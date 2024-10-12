@@ -1,0 +1,18 @@
+## The Following are required by ClusterTool and CANNOT be removed
+# Ensure VIP is different from all master IPs
+VIP: 10.0.0.90
+# Defines the MasterNode IP
+MASTER1IP: 10.0.0.62
+# Defines the gateway for all nodes
+GATEWAY: 10.0.0.1
+# Defines the ip range metallb is allowed to use
+METALLB_RANGE: 10.0.0.91-10.0.0.99
+# Sets the Kubernetes Dashboard IP. Has to be within METALLB_RANGE and not in use
+DASHBOARD_IP: 10.0.0.91
+# Used to automatically generate a sshkey-pair for FluxCD
+# Has to start with ssh://
+GITHUB_REPOSITORY: ssh://git@github.com:gismo2004/TestCluster.git
+# DO NOT ALTER
+PODNET: 172.16.0.0/16
+SVCNET: 172.17.0.0/16
+TestVar: "1234"
