@@ -15,4 +15,4 @@ GITHUB_REPOSITORY: ssh://git@github.com:gismo2004/TestCluster.git
 # DO NOT ALTER
 PODNET: 172.16.0.0/16
 SVCNET: 172.17.0.0/16
-TestVar: 1234
+TestVar: "1234"
