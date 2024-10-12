@@ -17,7 +17,7 @@ clusterSvcNets:
 cniConfig:
     name: none
 patches:
-    - '@./clusters/${CLUSTERNAME}/talos/patches/all.yaml'
+    - '@./patches/all.yaml'
 nodes:
     # We would adivce to always stick to a "k8s-something-1" style naming scheme
     - hostname: k8s-control-1
@@ -40,9 +40,9 @@ nodes:
             ip: ${VIP}
 controlPlane:
     patches:
-        - '@./clusters/${CLUSTERNAME}/talos/patches/controlplane.yaml'
-        - '@./clusters/${CLUSTERNAME}/talos/patches/sopssecret.yaml'
-        - '@./clusters/${CLUSTERNAME}/talos/patches/manifests.yaml'
+        - '@./patches/controlplane.yaml'
+        - '@./patches/sopssecret.yaml'
+        - '@./patches/manifests.yaml'
         # - '@./patches/nvidia.yaml'
     schematic:
         customization:
@@ -63,7 +63,7 @@ controlPlane:
                     # - siderolabs/thunderbolt
 worker:
     patches:
-        - '@./clusters/${CLUSTERNAME}/talos/patches/worker.yaml'
+        - '@./patches/worker.yaml'
         # - '@./patches/nvidia.yaml'
     schematic:
         customization:
