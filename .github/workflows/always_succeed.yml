@@ -1,0 +1,14 @@
+name: Always Success Check
+
+on:
+  pull_request:
+    branches:
+      - main
+      - renovate/*
+
+jobs:
+  always-pass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always Succeed
+        run: echo "This check always passes."
